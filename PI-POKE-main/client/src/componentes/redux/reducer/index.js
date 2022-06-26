@@ -1,4 +1,15 @@
-
+import {
+	GET_POKEMONS,
+	GET_TYPES,
+	FILTER_CREADO,
+	FILTER_POR_TIPO,
+	ORDENADO_POR_NOMBRE,
+	GET_DETAILS,
+	BORRAR_ESTADO,
+	GET_NAME_POKEMONS,
+	ORDENADO_POR_ATTACK,
+  RESET,
+} from '../actions';
 
 const initialState = {
     Pokemones : [],
@@ -14,36 +25,36 @@ const initialState = {
 
 function rootReducer(state= initialState, action){
     switch(action.type){
-        case "GET_POKEMONS":
+        case GET_POKEMONS:
        return {
            ...state,
            Pokemones: action.payload,
            Pokemones2:action.payload,
            
        }
-       case "GET_TYPES":
+       case GET_TYPES:
         return {
             ...state,
             Types: action.payload
         }
         
-        case "GET_NAME_POKEMONS":
+        case GET_NAME_POKEMONS:
             return {
                 ...state,
                 Pokemones: action.payload
             }
 
-        case "POST_POKEMON":
-            return{
-                ...state
-            }
+        // case POST_POKEMON:
+        //     return{
+        //         ...state
+        //     }
 
-            case "GET_DETAILS":
+            case GET_DETAILS:
                 return{
                     ...state,
                 Detail: action.payload
                 }
-                case "BORRAR_ESTADO":
+                case BORRAR_ESTADO:
                     return{
                         ...state,
                     Detail: []
@@ -55,7 +66,7 @@ function rootReducer(state= initialState, action){
     
 
              //FILTROS
-        case "FILTER_POR_TIPO":
+        case FILTER_POR_TIPO:
 
             const todoPokemones= state.Pokemones2
             
@@ -76,7 +87,7 @@ function rootReducer(state= initialState, action){
             }
             
             
-            case "FILTER_CREADO":
+            case FILTER_CREADO:
                 const todoPokemones2 = state.Pokemones2
                 const filterCreado = action.payload ==="creados"? todoPokemones2.filter(e=>e.creadoBd) : todoPokemones2.filter(e=> !e.creadoBd)  
     
@@ -89,7 +100,7 @@ function rootReducer(state= initialState, action){
 
                 //ORDENAMIENTOS
 
-             case "ORDENADO_POR_NOMBRE":
+             case ORDENADO_POR_NOMBRE:
                  let sort= action.payload === "asc"?
                  state.Pokemones.sort(function(a,b){
                      if(a.name > b.name){
@@ -118,7 +129,7 @@ function rootReducer(state= initialState, action){
                 }
 
 
-                case "ORDENADO_POR_ATTACK":
+                case ORDENADO_POR_ATTACK:
                   
 
                     let sortAttack= action.payload === "fuerza-"?
@@ -144,7 +155,7 @@ function rootReducer(state= initialState, action){
                     
               
 
-                        case "RESET":
+                        case RESET:
                             return {
                                 ...state,
                                 Pokemones: action.payload,
