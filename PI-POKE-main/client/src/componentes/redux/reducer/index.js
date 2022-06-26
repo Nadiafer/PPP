@@ -9,6 +9,7 @@ import {
 	GET_NAME_POKEMONS,
 	ORDENADO_POR_ATTACK,
   RESET,
+  POST_POKEMON
 } from '../actions';
 
 const initialState = {
@@ -44,10 +45,10 @@ function rootReducer(state= initialState, action){
                 Pokemones: action.payload
             }
 
-        // case POST_POKEMON:
-        //     return{
-        //         ...state
-        //     }
+         case POST_POKEMON:
+             return{
+                 ...state
+             }
 
             case GET_DETAILS:
                 return{

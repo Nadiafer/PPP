@@ -24,7 +24,7 @@ console.log(orden)
 
 //ORDENA TYPES 
 const TodoTypes = useSelector(state => state.Types)
-TodoTypes.sort((a,b)=> a.name.localeCompare(b.name))
+
 
 //ERROR 404 PAGINA
 const errPage = TodoPokemons.includes("Pokemon no encontrado") 
@@ -59,7 +59,7 @@ useEffect(() => {
    refresc()
   
 }
-, [dispatch])
+, [])
 
 
 function handleClick(e){
@@ -93,9 +93,7 @@ function handleOrderAttack(e){
    
 
 }
-
-
-
+console.log(TodoTypes)
 
 
     return (
@@ -114,10 +112,11 @@ function handleOrderAttack(e){
             <select className="selectores" onChange={e=> handleFilterTipo(e)} >
                
              <option value="Tipo">Tipo:</option>                                      
-          {TodoTypes?.map((p,i) => (
+          {TodoTypes.map((p,i) => (
+
             
-            <option value={p.name} key={i}>
-              {p.name}
+            <option value={p} key={i}>
+              {p}
             </option>
           ))}
 
@@ -179,7 +178,7 @@ function handleOrderAttack(e){
 
                         <div className="cards" key={i} >
                             <Link to={"/pokemons/" + c.id} >
-                                <Card name={c.name} image={ c.sprite?  c.sprite : c.imagen? c.imagen : "https://media1.giphy.com/media/DRfu7BT8ZK1uo/200.gif"} type={tipo?tipo:c.types}/>
+                                <Card name={c.name} image={ c.sprite?  c.sprite :"https://media1.giphy.com/media/DRfu7BT8ZK1uo/200.gif"} type={tipo?tipo:c.types}/>
                             </Link>
                             </div>
                     )

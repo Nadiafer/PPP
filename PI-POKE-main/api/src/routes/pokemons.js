@@ -29,7 +29,7 @@ if(name){
 
 //CREO UN POKEMON
 router.post ('/pokemon' , async (req, res)=>{
-  const {name, sprite, hp, attack, defense, speed, height, weight, creadoBd, types} = req.body
+  const {name, sprite, hp, attack, defense, speed, height, weight, types} = req.body
   const pokemonCreated = await Pokemon.create({
                 name: name.toLowerCase(),
                 
@@ -39,7 +39,7 @@ router.post ('/pokemon' , async (req, res)=>{
                 speed,
                 height,
                 weight,
-                creadoBd,
+                
                 sprite,
                 
 
@@ -59,11 +59,12 @@ return res.send('Pokemon Creado con exito')
     
  router.get("/pokemons/:id", async (req,res)=>{
 
-  const id =parseInt(req.params.id)
+  const id =req.params.id
   const PokeTotal= await getAllPoke()
+  
 
   if(id){
-    let pokeId= await PokeTotal.filter(e=> e.id === id)
+    let pokeId= PokeTotal.filter(e=> e.id.toString() === id.toString())
    pokeId.length?
    res.status(200).json(pokeId):
    res.status(404).send("No se encontro pokemon")

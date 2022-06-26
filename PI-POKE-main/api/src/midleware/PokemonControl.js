@@ -10,6 +10,7 @@ const getApiInfo = async () => {
         const getApiUrl = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=40");
         const apiResult = getApiUrl.data.results.map(e => axios.get(e.url)); 
         const infoUrlPokemons = await axios.all(apiResult);   
+        // console.log(apiResult)
         let pokemons = infoUrlPokemons.map(obj => obj.data);
         
         let informacionPokemons = pokemons.map(poke=>{

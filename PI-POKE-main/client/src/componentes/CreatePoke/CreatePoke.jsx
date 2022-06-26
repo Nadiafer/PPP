@@ -22,8 +22,8 @@ export default function CreatePoke() {
     speed:"",
     height: "",
     weight: "",
-    spite: "",
-    type: []
+    sprite: "",
+    types: []
 
   })
 
@@ -64,25 +64,25 @@ export default function CreatePoke() {
     if(ima !== "https") return  alert("La imagen debe ser https")
     else{ 
        
-      if(input.type.length > 2) return alert("Máximo 2 tipos")
+      if(input.types.length > 2) return alert("Máximo 2 tipos")
       else{
-        const {name, vida,  attack, defensa,velocidad,altura, peso, type }= input
+        const {name, hp,  attack, defense,speed,height, weight, types }= input
    
-        if(name && vida && attack && defensa && velocidad && altura && peso && type){
+        if(name && hp && attack && defense && speed && height && weight && types){
 
           
           dispatch(postPokemon(input)) 
           alert("Personaje creado con exito")
           setinput({
             name: "",
-            vida: "" ,
+            hp: "" ,
             attack: "",
-            defensa: "",
-            velocidad:"",
-            altura: "",
-            peso: "",
-            imagen: "",
-            type: []
+            defense: "",
+            speed:"",
+            height: "",
+            weight: "",
+            sprite: "",
+            types: []
         
          
           })
@@ -108,19 +108,9 @@ export default function CreatePoke() {
   function handleDelete(e){
     setinput({
       ...input,
-      type: input.type.filter(typ => typ !== e)
+      types: input.types.filter(typ => typ !== e)
     })
   }
-
-
-
-  useEffect(()=>{
-    dispatch(getTypes())
-
-  }, [dispatch])
-
-
-
 
   return (
     
@@ -144,12 +134,12 @@ export default function CreatePoke() {
            <input
             className='nombre'
            type="number"
-           value={input.vida}
-           name="vida"
+           value={input.hp}
+           name="hp"
            min="0"
            max="255"
            onChange={ (e)=>handleChange(e)}/>
-           {errores.vida &&(<p>{errores.vida}</p>)}
+           {errores.hp &&(<p>{errores.hp}</p>)}
          </div>
 
          <div>
@@ -170,12 +160,12 @@ export default function CreatePoke() {
            <input
             className='nombre'
            type="number"
-           value={input.defensa}
-           name="defensa"
+           value={input.defense}
+           name="defense"
            min="0"
            max="255"
            onChange={ (e)=>handleChange(e)}/>
-           {errores.defensa &&(<p>{errores.defensa}</p>)}
+           {errores.defense &&(<p>{errores.defense}</p>)}
          </div>
 
          <div>
@@ -184,12 +174,12 @@ export default function CreatePoke() {
            
            className='nombre'
            type="number"
-           value={input.velocidad}
-           name="velocidad"
+           value={input.speed}
+           name="speed"
            min="0"
            max="255"
            onChange={ (e)=>handleChange(e)}/>
-           {errores.velocidad &&(<p>{errores.velocidad}</p>)}
+           {errores.speed &&(<p>{errores.speed}</p>)}
          </div>
 
          <div>
@@ -197,12 +187,12 @@ export default function CreatePoke() {
            <input
           className='nombre'
            type="number"
-           value={input.altura}
-           name="altura"
+           value={input.height}
+           name="height"
            min="0"
            max="255"
            onChange={ (e)=>handleChange(e)}/>
-           {errores.altura &&(<p>{errores.altura}</p>)}
+           {errores.height &&(<p>{errores.height}</p>)}
          </div>
 
          <div>
@@ -210,12 +200,12 @@ export default function CreatePoke() {
            <input
              className='nombre'
            type="number"
-           value={input.peso}
-           name="peso"
+           value={input.weight}
+           name="weight"
            min="0"
            max="255"
            onChange={ (e)=>handleChange(e)}/>
-           {errores.peso &&(<p>{errores.peso}</p>)}
+           {errores.weight &&(<p>{errores.weight}</p>)}
          </div>
 
          <div>
@@ -232,8 +222,8 @@ export default function CreatePoke() {
          <div>
         <select  onChange={(e)=>handleSelecTypo(e)} >
             {types.map((typ)=>(
-              <option value={typ.name}>
-                {typ.name}
+              <option value={typ}>
+                {typ}
               
                   </option>
            ))}
@@ -249,7 +239,7 @@ export default function CreatePoke() {
 
 
         </form>
-        {input.type.map((e) => 
+        {input.types.map((e) => 
         <div className='tipos'>
           <p>{e}</p>
           <button className='eliminar' onClick={()=> handleDelete(e)}>x</button>

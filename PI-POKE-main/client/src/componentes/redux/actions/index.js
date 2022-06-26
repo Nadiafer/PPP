@@ -10,6 +10,7 @@ export const FILTER_CREADO = 'FILTER_CREADO';
 export const ORDENADO_POR_NOMBRE='ORDENADO_POR_NOMBRE';
 export const ORDENADO_POR_ATTACK='ORDENADO_POR_ATTACK';
 export const RESET = 'RESET';
+export const POST_POKEMON = 'POST_POKEMON'
 
 
 
@@ -22,7 +23,8 @@ export const RESET = 'RESET';
 
  export function getPokemons(){
     return async function (dispatch){
-        var json = await axios.get('/pokemons');
+        var json = await axios.get('http://localhost:3001/pokemons');
+        console.log(json.data)
      
         return dispatch ({
             type: GET_POKEMONS,
@@ -33,7 +35,8 @@ export const RESET = 'RESET';
 
 export function getTypes(){
     return async function (dispatch){
-        var json = await axios.get('/types');
+        var json = await axios.get('http://localhost:3001/types');
+        // let todoTypes =json.data.sort((a,b)=> a.name.localeCompare(b.name))
         return dispatch ({
             type: GET_TYPES,
             payload:json.data
@@ -43,7 +46,7 @@ export function getTypes(){
 
 export function getNamePokemons(name){
     return async function (dispatch){
-        var json = await axios.get("/pokemon?name=" + name);
+        var json = await axios.get("http://localhost:3001/pokemons?name=" + name);
         return dispatch ({
             type: GET_NAME_POKEMONS,
               payload:json.data
@@ -56,7 +59,7 @@ export function getNamePokemons(name){
 
 export function getDetails(id){
     return async function (dispatch){
-        var json = await axios.get("/pokemon/"+ id);
+        var json = await axios.get("http://localhost:3001/pokemons/"+ id);
         return dispatch ({
             type: GET_DETAILS,
             payload:json.data
@@ -69,14 +72,24 @@ export function getDetails(id){
 }
 
 
-
-
-
 export function postPokemon(payload){
+  console.log(payload)
     return async function (){
-    let respuesta= await axios.post('/pokemon', payload);
-    
-        return respuesta
+      try {
+        let respuesta= await axios.post('http://localhost:3001/pokemon', payload);
+        
+        
+            return  ({
+              type:POST_POKEMON,
+              
+ 
+            })
+            
+        
+      } catch (error) {
+        console.log(error)
+      }
+
  
         }
     
