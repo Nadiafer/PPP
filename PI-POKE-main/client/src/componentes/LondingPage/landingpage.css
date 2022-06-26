@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+  
+    
+  }
+  
+
+.fondototal{
+
+    background-image: url(./fondo.png) ; 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+   
+    
+
+}
+
+.fondototalh5{
+    display: flex;
+    justify-content: flex-end;
+   margin-top: 410px;
+   margin-right: 393px;
+padding: 10px;
+   cursor: pointer;
+   overflow: hidden;
+}
+/* .fondototalh2{
+  margin-left: 550px;
+  margin-top: 12px;
+  font-size: 20px;
+ color: rgb(245, 245, 29);
+
+
+} */
+
+.fondototal h5:hover{
+
+  transform: scale(1.1);
+  z-index: 1;
+  transition: all 500ms;
+}
+
+
+
+
+

@@ -1,0 +1,29 @@
+
+.App {
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  
+}
+
+.PokemonLogo {
+  
+  width:100%;
+
+  position:fixed;
+
+  bottom:0px;
+
+  text-align:left;
+
+  z-index:9999;
+
+  padding: 1em 6px 30px 5px;
+
+}
+
+
+
+

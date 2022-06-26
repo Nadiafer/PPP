@@ -1,0 +1,57 @@
+ body{
+    overflow-x:hidden ;
+    font-family: "Lato";
+    text-decoration: none;
+    
+}
+
+.header {
+
+ position: absolute;
+    height: 100px;
+    top: 25px;
+    width: 100%;
+    margin-top: -30px;
+    padding: 10px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    background-color: rgb(124, 99, 124);
+    background-image: url(./navbar.png) ;
+    background-repeat: no-repeat;
+    -webkit-box-shadow: 0px 10px 10px 0px rgba(33, 33, 33, 0.35);
+    -moz-box-shadow: 0px 10px 10px 0px rgba(33, 33, 33, 0.35);
+    box-shadow: 0px 10px 10px 0px rgba(33, 33, 33, 0.35);
+    color: white
+  } 
+  
+.header .crear{
+  margin-left: 300px;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  border-radius: 25px 25px;
+  outline: none;
+  cursor: pointer;
+
+   color:rgb(207, 102, 211);
+  
+
+}
+
+.header .crear ul button
+{
+   padding: 5px;
+  border: none;
+  border-radius: 10px;
+  margin-left: -20px;
+  border-radius: 25px 25px;
+  outline: none;
+  cursor: pointer;
+background-color: rgb(153, 81, 160);
+color:rgb(26, 13, 13);
+
+
+} 
+

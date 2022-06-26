@@ -1,0 +1,77 @@
+
+
+.titulo{
+  margin-top:150px;
+  margin-left: -10px;
+  
+}
+
+
+.selectores{
+margin-top: 20px;
+margin-bottom: 20px;
+border: none;
+font-size: 1.1em;
+cursor: pointer;
+
+}
+
+.containerCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  padding: 10px 80px 20px;
+  justify-content: center;
+  @media (max-width: 900px) {
+    & {
+      padding-bottom: 10px;
+    }
+  }
+  }
+
+  .botonvolver{
+    border: none;
+    background-color: rgb(209, 103, 103);
+    padding: 10px;
+    border-radius: 20px;
+    color:rgb(238, 238, 98);
+    cursor: pointer;
+  }
+
+
+  .containerCards p{
+  width: 450px;
+  height: 450px;
+  margin-left: 450px;
+  margin-top: 20px;
+  font-size: 1.5em;
+   
+  }
+  
+  .cargando img{
+    margin-top: 20px;
+   height:  350px;
+   width: 350px;
+   margin-left: 60px;
+   justify-content: center;
+  }
+    
+
+
+  .containerCards h1{
+    width: 450px;
+    height: 450px;
+    margin-left: 450px;
+    margin-top: 20px;
+    font-size: 2em;
+
+    
+  }
+
+  .containerCards h2{
+    margin-top: 10px;
+    height:  350px;
+    width: 350px;
+    margin-left: 500px;
+ 
+   
+  }
