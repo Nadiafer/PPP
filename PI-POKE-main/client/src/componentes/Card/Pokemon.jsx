@@ -8,7 +8,7 @@ function Pokemon({name, image, type}) {
         <div className="contenedor_card">
             <div className='card'>
                 <div className='cover'>
-                 <img src={image}alt="imagen" className='cardImagen'/>
+                 <img src={image}alt="imagen" className/>
                  <div className='img_si'></div>
            </div>
         <div className='descripcion'>

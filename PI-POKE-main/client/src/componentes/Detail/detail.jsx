@@ -30,17 +30,17 @@ useEffect(()=> {
 
 return(
       <div className="contenedortodo">
-         <div className="contenedorcard2" >
+         <div >
         {miPokemon?.length > 0?
         <div>
             <div className="card">
-                <div className="cover2">
+                <div>
             <h1>{miPokemon[0]?.name}</h1>
 
             <img src={miPokemon[0]?.sprite || miPokemon[0]?.imagen || "https://media1.giphy.com/media/DRfu7BT8ZK1uo/200.gif" } alt="imagen"/>
-            <div className="fondo"></div>
+            <div></div>
             </div>
-            <div className="descripcion2">
+            <div>
             <h3><span>Tipo:</span> {!miPokemon[0]?.creadoBd?miPokemon[0]?.types + " ": miPokemon[0].Types.map(e => e.name + (" "))}</h3>                    
             <h4><span>vida:</span> {miPokemon[0]?.life || miPokemon[0]?.vida}</h4>
             <h4><span>Ataque:</span> {miPokemon[0]?.attack }</h4>
