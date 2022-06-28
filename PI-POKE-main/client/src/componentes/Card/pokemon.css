@@ -22,16 +22,16 @@ img {
 }
 
 .card {
-  width: 300px;
-  background-color: white;
-  margin: 10px;
+  width: 100px;
+  background-color: rgb(253, 249, 249);
+  margin: 200px;
   transition: all 400ms;
  
  
 }
 
 .card:hover{
-  transform: scale(1.1);
+  
   box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
 }
 .card .cover{
@@ -56,11 +56,11 @@ img {
 }
 
 .card .img_si{
-  background-image: url(./card-1.png);
-  width: 100%;
+  
+  width: 100px;
   height: 100px;
-  position: absolute;
-  background-size: cover;
+  
+  
   bottom: -10px;
   left: 0;
   border-radius: 10px;   
@@ -83,7 +83,7 @@ text-decoration: none;
   color:black;
   background-color: rgb(246, 119, 119);
   padding: 10px;
-  border-radius: 30%;
+  border-radius: 60%;
 
   
   
@@ -102,7 +102,7 @@ text-decoration: none;
   padding: 10px 40px;
   margin-top: 20px;
   border: none;
-  background-color: rgb(240, 59, 59);
+  background-color: rgb(231, 163, 163);
   color:white;
   font-size: 14px;
   cursor: pointer;
